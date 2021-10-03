@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
     if @tweet.save
       flash[:notice] = '1レコード追加しました'
-      redirect_to root_path
+      redirect_to tweet_path
     else
       render 'new'
     end
